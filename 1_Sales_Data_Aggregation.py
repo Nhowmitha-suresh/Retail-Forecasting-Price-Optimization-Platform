@@ -147,3 +147,9 @@ df_final.to_csv(output_file, index=False)
 print("✅ Sales data aggregation completed successfully")
 print("📁 File created:", output_file)
 print("📊 Rows:", df_final.shape[0])
+def run_sales_aggregation():
+    output_file = os.path.join(
+        OUTPUT_DIR, f"week_start_{start_date}.csv"
+    )
+    df_final.to_csv(output_file, index=False)
+    return output_file, df_final
